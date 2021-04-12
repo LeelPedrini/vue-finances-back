@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 
 services:
 
@@ -19,7 +19,7 @@ services:
       - .:/usr/app
 
   prisma:
-    image: prismagraphql/prisma:1.27
+    image: prismagraphql/prisma:1.28
     restart: always
     ports:
     - "4466:4466"

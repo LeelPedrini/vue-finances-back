@@ -12,7 +12,7 @@ const server = new GraphQLServer({
     ...request,
     db: new Binding.Prisma({
       typeDefs: `${__dirname}/generated/graphql-schema/prisma.graphql`,
-      endpoint : endpoint,
+      endpoint,
       secret
     }),
     prisma
@@ -20,8 +20,6 @@ const server = new GraphQLServer({
 })
 
 server.start({
-  playground,
-  cors: {
-    origin
-  }
+  cors: {origin},
+  playground
 }).then(() => console.log('Server running on http://localhost:4000...'))
